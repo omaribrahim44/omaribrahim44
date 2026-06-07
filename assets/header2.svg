@@ -1,0 +1,170 @@
+<svg width="900" height="280" viewBox="0 0 900 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&amp;display=swap');
+
+      .bg { fill: #0d1117; }
+      .grid-line { stroke: #0f3460; stroke-width: 0.5; opacity: 0.4; }
+      .scan { fill: none; }
+
+      .title {
+        font-family: 'Share Tech Mono', 'Courier New', monospace;
+        font-size: 52px;
+        fill: #58a6ff;
+        letter-spacing: 4px;
+      }
+      .title-glitch1 {
+        font-family: 'Share Tech Mono', 'Courier New', monospace;
+        font-size: 52px;
+        fill: #ff4757;
+        letter-spacing: 4px;
+        opacity: 0;
+      }
+      .title-glitch2 {
+        font-family: 'Share Tech Mono', 'Courier New', monospace;
+        font-size: 52px;
+        fill: #0ff;
+        letter-spacing: 4px;
+        opacity: 0;
+      }
+      .subtitle {
+        font-family: 'Share Tech Mono', 'Courier New', monospace;
+        font-size: 15px;
+        fill: #8b949e;
+        letter-spacing: 2px;
+      }
+      .cursor {
+        font-family: 'Share Tech Mono', 'Courier New', monospace;
+        font-size: 52px;
+        fill: #58a6ff;
+      }
+      .prompt {
+        font-family: 'Share Tech Mono', 'Courier New', monospace;
+        font-size: 13px;
+        fill: #3fb950;
+      }
+      .bracket {
+        font-family: 'Share Tech Mono', 'Courier New', monospace;
+        font-size: 52px;
+        fill: #3fb950;
+        opacity: 0.6;
+      }
+      .scanline {
+        fill: url(#scanGrad);
+        animation: scan 4s linear infinite;
+      }
+      .noise {
+        animation: flicker 0.15s infinite;
+      }
+
+      @keyframes glitch1 {
+        0%, 85%, 100% { opacity: 0; transform: translate(0,0); }
+        86% { opacity: 0.8; transform: translate(-3px, 1px); clip-path: inset(20% 0 60% 0); }
+        88% { opacity: 0; }
+        92% { opacity: 0.6; transform: translate(3px, -1px); clip-path: inset(60% 0 10% 0); }
+        94% { opacity: 0; }
+      }
+      @keyframes glitch2 {
+        0%, 87%, 100% { opacity: 0; transform: translate(0,0); }
+        88% { opacity: 0.7; transform: translate(3px, 2px); clip-path: inset(40% 0 40% 0); }
+        90% { opacity: 0; }
+        95% { opacity: 0.5; transform: translate(-2px, -2px); clip-path: inset(70% 0 5% 0); }
+        97% { opacity: 0; }
+      }
+      @keyframes blink {
+        0%, 49% { opacity: 1; }
+        50%, 100% { opacity: 0; }
+      }
+      @keyframes scan {
+        0% { transform: translateY(-280px); }
+        100% { transform: translateY(280px); }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes typing {
+        from { opacity: 0; }
+        to { opacity: 1; }
+      }
+
+      .title { animation: fadeInUp 0.8s ease 0.3s both; }
+      .subtitle { animation: fadeInUp 0.8s ease 0.9s both; }
+      .prompt { animation: fadeInUp 0.8s ease 0.1s both; }
+      .title-glitch1 { animation: glitch1 6s infinite 2s; }
+      .title-glitch2 { animation: glitch2 6s infinite 2s; }
+      .cursor { animation: blink 1s step-end infinite; }
+    </style>
+
+    <linearGradient id="scanGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#58a6ff" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#58a6ff" stop-opacity="0.03"/>
+      <stop offset="100%" stop-color="#58a6ff" stop-opacity="0"/>
+    </linearGradient>
+
+    <clipPath id="clip1">
+      <rect x="0" y="80" width="900" height="40"/>
+    </clipPath>
+    <clipPath id="clip2">
+      <rect x="0" y="120" width="900" height="30"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="280" class="bg"/>
+
+  <!-- Grid lines vertical -->
+  <line x1="90" y1="0" x2="90" y2="280" class="grid-line"/>
+  <line x1="180" y1="0" x2="180" y2="280" class="grid-line"/>
+  <line x1="270" y1="0" x2="270" y2="280" class="grid-line"/>
+  <line x1="360" y1="0" x2="360" y2="280" class="grid-line"/>
+  <line x1="450" y1="0" x2="450" y2="280" class="grid-line"/>
+  <line x1="540" y1="0" x2="540" y2="280" class="grid-line"/>
+  <line x1="630" y1="0" x2="630" y2="280" class="grid-line"/>
+  <line x1="720" y1="0" x2="720" y2="280" class="grid-line"/>
+  <line x1="810" y1="0" x2="810" y2="280" class="grid-line"/>
+
+  <!-- Grid lines horizontal -->
+  <line x1="0" y1="56" x2="900" y2="56" class="grid-line"/>
+  <line x1="0" y1="112" x2="900" y2="112" class="grid-line"/>
+  <line x1="0" y1="168" x2="900" y2="168" class="grid-line"/>
+  <line x1="0" y1="224" x2="900" y2="224" class="grid-line"/>
+
+  <!-- Scanline effect -->
+  <rect width="900" height="80" class="scanline"/>
+
+  <!-- Top accent line -->
+  <rect x="0" y="0" width="900" height="3" fill="#0f3460"/>
+  <!-- Bottom accent line -->
+  <rect x="0" y="277" width="900" height="3" fill="#0f3460"/>
+
+  <!-- Left glow dot -->
+  <circle cx="30" cy="140" r="3" fill="#58a6ff" opacity="0.6"/>
+  <circle cx="30" cy="140" r="8" fill="#58a6ff" opacity="0.1"/>
+  <!-- Right glow dot -->
+  <circle cx="870" cy="140" r="3" fill="#58a6ff" opacity="0.6"/>
+  <circle cx="870" cy="140" r="8" fill="#58a6ff" opacity="0.1"/>
+
+  <!-- Terminal prompt top-left -->
+  <text x="30" y="40" class="prompt">root@0xCroatian:~$</text>
+
+  <!-- Brackets -->
+  <text x="50" y="155" class="bracket">[</text>
+  <text x="822" y="155" class="bracket">]</text>
+
+  <!-- Main title — base layer -->
+  <text x="450" y="155" text-anchor="middle" class="title">0xCroatian</text>
+
+  <!-- Glitch layers -->
+  <text x="450" y="155" text-anchor="middle" class="title-glitch1" clip-path="url(#clip1)">0xCroatian</text>
+  <text x="450" y="155" text-anchor="middle" class="title-glitch2" clip-path="url(#clip2)">0xCroatian</text>
+
+  <!-- Subtitle -->
+  <text x="450" y="195" text-anchor="middle" class="subtitle">Junior Penetration Tester  |  Alexandria University Graduate</text>
+
+  <!-- Bottom status bar -->
+  <rect x="0" y="250" width="900" height="30" fill="#0f3460" opacity="0.3"/>
+  <text x="20" y="269" class="prompt" font-size="11">[ STATUS: ACTIVE ]</text>
+  <text x="450" y="269" text-anchor="middle" class="prompt" font-size="11">Web AppSec  ·  Network PT  ·  Digital Forensics  ·  Malware Analysis</text>
+  <text x="880" y="269" text-anchor="end" class="prompt" font-size="11">EG/ALX</text>
+</svg>
