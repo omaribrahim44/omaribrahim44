@@ -144,10 +144,7 @@ On this profile you'll find projects covering web security, digital forensics, b
   <tr>
     <td width="50%" align="center">
       <img src="https://github-profile-summary-cards.vercel.app/api/cards/stats?username=omaribrahim44&theme=github_dark" width="100%" alt="Profile Stats">
-    </td>
-    <td width="50%" align="center">
-      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=omaribrahim44&theme=github_dark&hide_border=true&layout=compact&langs_count=6" width="100%" alt="Top Languages">
-    </td>
+    
   </tr>
 </table>
 
